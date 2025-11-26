@@ -365,7 +365,7 @@ namespace smart_inventory
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Ignorar errores durante la búsqueda en tiempo real
             }

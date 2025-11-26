@@ -96,7 +96,7 @@
             this.gbTablaVentasPropias.ForeColor = System.Drawing.Color.White;
             this.gbTablaVentasPropias.Location = new System.Drawing.Point(20, 242);
             this.gbTablaVentasPropias.Name = "gbTablaVentasPropias";
-            this.gbTablaVentasPropias.Size = new System.Drawing.Size(944, 407);
+            this.gbTablaVentasPropias.Size = new System.Drawing.Size(1144, 407);
             this.gbTablaVentasPropias.TabIndex = 75;
             this.gbTablaVentasPropias.TabStop = false;
             this.gbTablaVentasPropias.Text = "Tabla de ventas propias";
@@ -123,7 +123,7 @@
             this.dgvReportes.Location = new System.Drawing.Point(6, 36);
             this.dgvReportes.Name = "dgvReportes";
             this.dgvReportes.RowHeadersWidth = 51;
-            this.dgvReportes.Size = new System.Drawing.Size(923, 360);
+            this.dgvReportes.Size = new System.Drawing.Size(1123, 360);
             this.dgvReportes.TabIndex = 0;
             this.dgvReportes.UseWaitCursor = true;
             // 
@@ -148,7 +148,7 @@
             this.panel1.Location = new System.Drawing.Point(20, 84);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 3);
+            this.panel1.Size = new System.Drawing.Size(1120, 3);
             this.panel1.TabIndex = 73;
             // 
             // dtpFechaFin
@@ -244,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.label4);

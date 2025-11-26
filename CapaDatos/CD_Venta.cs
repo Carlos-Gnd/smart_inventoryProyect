@@ -127,7 +127,7 @@ namespace CapaDatos
                 }
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // ...
             }
@@ -304,7 +304,7 @@ namespace CapaDatos
                 }
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // ...
             }

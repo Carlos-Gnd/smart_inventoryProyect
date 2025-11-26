@@ -323,5 +323,12 @@ namespace smart_inventory
             categoriaSeleccionada = null;
             txtNombre.Focus();
         }
+
+        private void Categorias_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'smart_InventoryDataSet.Categorias' Puede moverla o quitarla según sea necesario.
+            this.categoriasTableAdapter.Fill(this.smart_InventoryDataSet.Categorias);
+
+        }
     }
 }
