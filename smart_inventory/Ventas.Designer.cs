@@ -33,9 +33,12 @@
             this.pic_users = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.btnExportarExcel = new System.Windows.Forms.Button();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.lblFiltrarCajero = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaFin = new System.Windows.Forms.Label();
+            this.btnVerDetalles = new System.Windows.Forms.Button();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.gbDetalleVenta = new System.Windows.Forms.GroupBox();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.btnExportarPDF = new System.Windows.Forms.Button();
-            this.btnExportarExcel = new System.Windows.Forms.Button();
-            this.btnVerDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).BeginInit();
             this.gbFiltros.SuspendLayout();
             this.gbListaVentas.SuspendLayout();
@@ -92,7 +92,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 69);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1171, 3);
+            this.panel1.Size = new System.Drawing.Size(1103, 3);
             this.panel1.TabIndex = 58;
             // 
             // gbFiltros
@@ -118,6 +118,30 @@
             this.gbFiltros.TabIndex = 60;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnExportarExcel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportarExcel.Location = new System.Drawing.Point(37, 424);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(209, 40);
+            this.btnExportarExcel.TabIndex = 11;
+            this.btnExportarExcel.Text = "📊 Exportar Excel";
+            this.btnExportarExcel.UseVisualStyleBackColor = false;
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.BackColor = System.Drawing.Color.Red;
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(37, 470);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(209, 40);
+            this.btnExportarPDF.TabIndex = 10;
+            this.btnExportarPDF.Text = "📥 Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = false;
             // 
             // lblFiltrarCajero
             // 
@@ -145,6 +169,18 @@
             this.lblFechaFin.Size = new System.Drawing.Size(95, 21);
             this.lblFechaFin.TabIndex = 7;
             this.lblFechaFin.Text = "Fecha Final:";
+            // 
+            // btnVerDetalles
+            // 
+            this.btnVerDetalles.BackColor = System.Drawing.Color.Orange;
+            this.btnVerDetalles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnVerDetalles.Location = new System.Drawing.Point(37, 378);
+            this.btnVerDetalles.Name = "btnVerDetalles";
+            this.btnVerDetalles.Size = new System.Drawing.Size(209, 40);
+            this.btnVerDetalles.TabIndex = 12;
+            this.btnVerDetalles.Text = "📋 Ver Detalles";
+            this.btnVerDetalles.UseVisualStyleBackColor = false;
             // 
             // lblFechaInicio
             // 
@@ -221,7 +257,7 @@
             this.gbListaVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbListaVentas.Location = new System.Drawing.Point(308, 77);
             this.gbListaVentas.Name = "gbListaVentas";
-            this.gbListaVentas.Size = new System.Drawing.Size(911, 268);
+            this.gbListaVentas.Size = new System.Drawing.Size(843, 268);
             this.gbListaVentas.TabIndex = 65;
             this.gbListaVentas.TabStop = false;
             this.gbListaVentas.Text = "Lista de Ventas";
@@ -245,7 +281,7 @@
             this.dgvVentas.Location = new System.Drawing.Point(6, 36);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RowHeadersWidth = 51;
-            this.dgvVentas.Size = new System.Drawing.Size(892, 218);
+            this.dgvVentas.Size = new System.Drawing.Size(824, 218);
             this.dgvVentas.TabIndex = 0;
             // 
             // gbDetalleVenta
@@ -257,7 +293,7 @@
             this.gbDetalleVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDetalleVenta.Location = new System.Drawing.Point(308, 351);
             this.gbDetalleVenta.Name = "gbDetalleVenta";
-            this.gbDetalleVenta.Size = new System.Drawing.Size(911, 265);
+            this.gbDetalleVenta.Size = new System.Drawing.Size(843, 265);
             this.gbDetalleVenta.TabIndex = 67;
             this.gbDetalleVenta.TabStop = false;
             this.gbDetalleVenta.Text = "Detalle de la Venta Seleccionada";
@@ -272,51 +308,15 @@
             this.dgvDetalleVenta.Location = new System.Drawing.Point(6, 29);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.RowHeadersWidth = 51;
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(892, 230);
+            this.dgvDetalleVenta.Size = new System.Drawing.Size(824, 230);
             this.dgvDetalleVenta.TabIndex = 1;
-            // 
-            // btnExportarPDF
-            // 
-            this.btnExportarPDF.BackColor = System.Drawing.Color.Red;
-            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
-            this.btnExportarPDF.Location = new System.Drawing.Point(37, 470);
-            this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(209, 40);
-            this.btnExportarPDF.TabIndex = 10;
-            this.btnExportarPDF.Text = "📥 Exportar PDF";
-            this.btnExportarPDF.UseVisualStyleBackColor = false;
-            // 
-            // btnExportarExcel
-            // 
-            this.btnExportarExcel.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnExportarExcel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExportarExcel.Location = new System.Drawing.Point(37, 424);
-            this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(209, 40);
-            this.btnExportarExcel.TabIndex = 11;
-            this.btnExportarExcel.Text = "📊 Exportar Excel";
-            this.btnExportarExcel.UseVisualStyleBackColor = false;
-            // 
-            // btnVerDetalles
-            // 
-            this.btnVerDetalles.BackColor = System.Drawing.Color.Orange;
-            this.btnVerDetalles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
-            this.btnVerDetalles.Location = new System.Drawing.Point(37, 378);
-            this.btnVerDetalles.Name = "btnVerDetalles";
-            this.btnVerDetalles.Size = new System.Drawing.Size(209, 40);
-            this.btnVerDetalles.TabIndex = 12;
-            this.btnVerDetalles.Text = "📋 Ver Detalles";
-            this.btnVerDetalles.UseVisualStyleBackColor = false;
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1252, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.gbDetalleVenta);
             this.Controls.Add(this.gbListaVentas);
             this.Controls.Add(this.gbFiltros);

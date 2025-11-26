@@ -62,7 +62,7 @@
             this.gbBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbBusqueda.Location = new System.Drawing.Point(19, 102);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(944, 69);
+            this.gbBusqueda.Size = new System.Drawing.Size(1144, 69);
             this.gbBusqueda.TabIndex = 76;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Categoria";
@@ -125,7 +125,7 @@
             this.gbTablaVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbTablaVentas.Location = new System.Drawing.Point(21, 243);
             this.gbTablaVentas.Name = "gbTablaVentas";
-            this.gbTablaVentas.Size = new System.Drawing.Size(944, 417);
+            this.gbTablaVentas.Size = new System.Drawing.Size(1144, 417);
             this.gbTablaVentas.TabIndex = 75;
             this.gbTablaVentas.TabStop = false;
             this.gbTablaVentas.Text = "Tabla de ventas propias";
@@ -149,7 +149,7 @@
             this.dgvTablaVentasPropias.Location = new System.Drawing.Point(6, 36);
             this.dgvTablaVentasPropias.Name = "dgvTablaVentasPropias";
             this.dgvTablaVentasPropias.RowHeadersWidth = 51;
-            this.dgvTablaVentasPropias.Size = new System.Drawing.Size(923, 370);
+            this.dgvTablaVentasPropias.Size = new System.Drawing.Size(1123, 370);
             this.dgvTablaVentasPropias.TabIndex = 0;
             this.dgvTablaVentasPropias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTablaVentasPropias_CellDoubleClick);
             this.dgvTablaVentasPropias.SelectionChanged += new System.EventHandler(this.dgvTablaVentasPropias_SelectionChanged);
@@ -176,7 +176,7 @@
             this.panel1.Location = new System.Drawing.Point(21, 81);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 3);
+            this.panel1.Size = new System.Drawing.Size(1144, 3);
             this.panel1.TabIndex = 73;
             // 
             // btnExportarExcel
@@ -236,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.btnImprimirTicket);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnExportarPDF);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categorias));
             this.btnEditarCategoria = new System.Windows.Forms.Button();
             this.btnBorrarCategoria = new System.Windows.Forms.Button();
@@ -45,13 +46,21 @@
             this.gbListaCategorias = new System.Windows.Forms.GroupBox();
             this.lblTotalCategorias = new System.Windows.Forms.Label();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smart_InventoryDataSet = new smart_inventory.Smart_InventoryDataSet();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.categoriasTableAdapter = new smart_inventory.Smart_InventoryDataSetTableAdapters.CategoriasTableAdapter();
+            this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).BeginInit();
             this.gbDatosCategoria.SuspendLayout();
             this.gbListaCategorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smart_InventoryDataSet)).BeginInit();
             this.gbBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +70,7 @@
             this.btnEditarCategoria.BackColor = System.Drawing.Color.ForestGreen;
             this.btnEditarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEditarCategoria.Location = new System.Drawing.Point(551, 162);
+            this.btnEditarCategoria.Location = new System.Drawing.Point(683, 162);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnEditarCategoria.TabIndex = 61;
@@ -75,7 +84,7 @@
             this.btnBorrarCategoria.BackColor = System.Drawing.Color.Red;
             this.btnBorrarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBorrarCategoria.Location = new System.Drawing.Point(551, 230);
+            this.btnBorrarCategoria.Location = new System.Drawing.Point(683, 230);
             this.btnBorrarCategoria.Name = "btnBorrarCategoria";
             this.btnBorrarCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnBorrarCategoria.TabIndex = 60;
@@ -104,7 +113,7 @@
             this.panel1.Location = new System.Drawing.Point(18, 84);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(886, 3);
+            this.panel1.Size = new System.Drawing.Size(1013, 3);
             this.panel1.TabIndex = 55;
             // 
             // gbDatosCategoria
@@ -120,7 +129,7 @@
             this.gbDatosCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatosCategoria.Location = new System.Drawing.Point(23, 95);
             this.gbDatosCategoria.Name = "gbDatosCategoria";
-            this.gbDatosCategoria.Size = new System.Drawing.Size(435, 240);
+            this.gbDatosCategoria.Size = new System.Drawing.Size(567, 240);
             this.gbDatosCategoria.TabIndex = 57;
             this.gbDatosCategoria.TabStop = false;
             this.gbDatosCategoria.Text = "Datos de la Categoria";
@@ -173,7 +182,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.DimGray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLimpiar.Location = new System.Drawing.Point(551, 296);
+            this.btnLimpiar.Location = new System.Drawing.Point(683, 296);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(199, 40);
             this.btnLimpiar.TabIndex = 59;
@@ -187,7 +196,7 @@
             this.btnNuevoCategoria.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnNuevoCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(551, 96);
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(683, 95);
             this.btnNuevoCategoria.Name = "btnNuevoCategoria";
             this.btnNuevoCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnNuevoCategoria.TabIndex = 58;
@@ -216,7 +225,7 @@
             this.gbListaCategorias.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbListaCategorias.Location = new System.Drawing.Point(23, 442);
             this.gbListaCategorias.Name = "gbListaCategorias";
-            this.gbListaCategorias.Size = new System.Drawing.Size(694, 259);
+            this.gbListaCategorias.Size = new System.Drawing.Size(859, 259);
             this.gbListaCategorias.TabIndex = 62;
             this.gbListaCategorias.TabStop = false;
             this.gbListaCategorias.Text = "Lista de Categorias";
@@ -235,14 +244,30 @@
             this.dgvCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCategorias.AutoGenerateColumns = false;
             this.dgvCategorias.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCategoriaDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dgvCategorias.DataSource = this.categoriasBindingSource;
             this.dgvCategorias.Location = new System.Drawing.Point(6, 36);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 51;
-            this.dgvCategorias.Size = new System.Drawing.Size(673, 212);
+            this.dgvCategorias.Size = new System.Drawing.Size(821, 212);
             this.dgvCategorias.TabIndex = 0;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataMember = "Categorias";
+            this.categoriasBindingSource.DataSource = this.smart_InventoryDataSet;
+            // 
+            // smart_InventoryDataSet
+            // 
+            this.smart_InventoryDataSet.DataSetName = "Smart_InventoryDataSet";
+            this.smart_InventoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbBusqueda
             // 
@@ -254,7 +279,7 @@
             this.gbBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbBusqueda.Location = new System.Drawing.Point(23, 354);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(694, 69);
+            this.gbBusqueda.Size = new System.Drawing.Size(859, 69);
             this.gbBusqueda.TabIndex = 63;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Categoria";
@@ -265,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarCategoria.Location = new System.Drawing.Point(62, 28);
             this.txtBuscarCategoria.Name = "txtBuscarCategoria";
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(626, 29);
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(774, 29);
             this.txtBuscarCategoria.TabIndex = 1;
             this.txtBuscarCategoria.TextChanged += new System.EventHandler(this.txtBuscarCategoria_TextChanged);
             // 
@@ -278,12 +303,38 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "🔍";
             // 
+            // categoriasTableAdapter
+            // 
+            this.categoriasTableAdapter.ClearBeforeFill = true;
+            // 
+            // idCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
+            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCategoriaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.Width = 400;
+            // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1001, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.btnEditarCategoria);
             this.Controls.Add(this.btnBorrarCategoria);
@@ -300,12 +351,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categorias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Categorias_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).EndInit();
             this.gbDatosCategoria.ResumeLayout(false);
             this.gbDatosCategoria.PerformLayout();
             this.gbListaCategorias.ResumeLayout(false);
             this.gbListaCategorias.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smart_InventoryDataSet)).EndInit();
             this.gbBusqueda.ResumeLayout(false);
             this.gbBusqueda.PerformLayout();
             this.ResumeLayout(false);
@@ -330,9 +384,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbListaCategorias;
         private System.Windows.Forms.Label lblTotalCategorias;
-        private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.GroupBox gbBusqueda;
         private System.Windows.Forms.TextBox txtBuscarCategoria;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvCategorias;
+        private Smart_InventoryDataSet smart_InventoryDataSet;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
+        private Smart_InventoryDataSetTableAdapters.CategoriasTableAdapter categoriasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }

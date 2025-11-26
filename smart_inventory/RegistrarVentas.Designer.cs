@@ -120,9 +120,9 @@
             this.gbDatosVenta.Controls.Add(this.txtIdUser);
             this.gbDatosVenta.Controls.Add(this.label10);
             this.gbDatosVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDatosVenta.Location = new System.Drawing.Point(382, 98);
+            this.gbDatosVenta.Location = new System.Drawing.Point(349, 98);
             this.gbDatosVenta.Name = "gbDatosVenta";
-            this.gbDatosVenta.Size = new System.Drawing.Size(181, 228);
+            this.gbDatosVenta.Size = new System.Drawing.Size(161, 228);
             this.gbDatosVenta.TabIndex = 94;
             this.gbDatosVenta.TabStop = false;
             this.gbDatosVenta.Text = "Datos de la Venta";
@@ -182,7 +182,7 @@
             this.gbComentarios.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.gbComentarios.Controls.Add(this.txtComentario);
             this.gbComentarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbComentarios.Location = new System.Drawing.Point(1054, 397);
+            this.gbComentarios.Location = new System.Drawing.Point(1021, 380);
             this.gbComentarios.Name = "gbComentarios";
             this.gbComentarios.Size = new System.Drawing.Size(304, 259);
             this.gbComentarios.TabIndex = 103;
@@ -213,9 +213,9 @@
             this.gbDetalleVenta.Controls.Add(this.txtBuscarProducto);
             this.gbDetalleVenta.Controls.Add(this.label14);
             this.gbDetalleVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDetalleVenta.Location = new System.Drawing.Point(569, 98);
+            this.gbDetalleVenta.Location = new System.Drawing.Point(516, 98);
             this.gbDetalleVenta.Name = "gbDetalleVenta";
-            this.gbDetalleVenta.Size = new System.Drawing.Size(368, 228);
+            this.gbDetalleVenta.Size = new System.Drawing.Size(310, 228);
             this.gbDetalleVenta.TabIndex = 102;
             this.gbDetalleVenta.TabStop = false;
             this.gbDetalleVenta.Text = "Detalle de la Venta";
@@ -224,7 +224,7 @@
             // 
             this.lblStockDisponible.AutoSize = true;
             this.lblStockDisponible.ForeColor = System.Drawing.Color.Green;
-            this.lblStockDisponible.Location = new System.Drawing.Point(232, 131);
+            this.lblStockDisponible.Location = new System.Drawing.Point(183, 127);
             this.lblStockDisponible.Name = "lblStockDisponible";
             this.lblStockDisponible.Size = new System.Drawing.Size(65, 21);
             this.lblStockDisponible.TabIndex = 23;
@@ -234,7 +234,7 @@
             // 
             this.lblPrecioUnitario.AutoSize = true;
             this.lblPrecioUnitario.Font = new System.Drawing.Font("Segoe UI Semibold", 17F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblPrecioUnitario.Location = new System.Drawing.Point(231, 69);
+            this.lblPrecioUnitario.Location = new System.Drawing.Point(182, 65);
             this.lblPrecioUnitario.Name = "lblPrecioUnitario";
             this.lblPrecioUnitario.Size = new System.Drawing.Size(72, 31);
             this.lblPrecioUnitario.TabIndex = 22;
@@ -262,7 +262,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(232, 43);
+            this.label12.Location = new System.Drawing.Point(183, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(123, 21);
             this.label12.TabIndex = 13;
@@ -321,7 +321,7 @@
             this.gbResumenVenta.Controls.Add(this.label1);
             this.gbResumenVenta.Controls.Add(this.label3);
             this.gbResumenVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbResumenVenta.Location = new System.Drawing.Point(943, 98);
+            this.gbResumenVenta.Location = new System.Drawing.Point(832, 98);
             this.gbResumenVenta.Name = "gbResumenVenta";
             this.gbResumenVenta.Size = new System.Drawing.Size(415, 228);
             this.gbResumenVenta.TabIndex = 104;
@@ -348,7 +348,7 @@
             this.gbPagoRapido.Controls.Add(this.btnPago20);
             this.gbPagoRapido.Controls.Add(this.btnPago10);
             this.gbPagoRapido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbPagoRapido.Location = new System.Drawing.Point(273, 11);
+            this.gbPagoRapido.Location = new System.Drawing.Point(257, 11);
             this.gbPagoRapido.Name = "gbPagoRapido";
             this.gbPagoRapido.Size = new System.Drawing.Size(128, 211);
             this.gbPagoRapido.TabIndex = 110;
@@ -539,7 +539,7 @@
             this.btnAgregarProducto.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProducto.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(382, 332);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(349, 332);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(181, 40);
             this.btnAgregarProducto.TabIndex = 97;
@@ -564,7 +564,7 @@
             this.gbListaUsuarios.Controls.Add(this.lblTotalUsuarios);
             this.gbListaUsuarios.Controls.Add(this.dgvDetalleVenta);
             this.gbListaUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.gbListaUsuarios.Location = new System.Drawing.Point(382, 397);
+            this.gbListaUsuarios.Location = new System.Drawing.Point(349, 380);
             this.gbListaUsuarios.Name = "gbListaUsuarios";
             this.gbListaUsuarios.Size = new System.Drawing.Size(666, 259);
             this.gbListaUsuarios.TabIndex = 101;
@@ -598,7 +598,7 @@
             this.btnQuitarProducto.BackColor = System.Drawing.Color.ForestGreen;
             this.btnQuitarProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarProducto.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnQuitarProducto.Location = new System.Drawing.Point(569, 332);
+            this.btnQuitarProducto.Location = new System.Drawing.Point(534, 332);
             this.btnQuitarProducto.Name = "btnQuitarProducto";
             this.btnQuitarProducto.Size = new System.Drawing.Size(181, 40);
             this.btnQuitarProducto.TabIndex = 100;
@@ -611,7 +611,7 @@
             this.btnNuevaVenta.BackColor = System.Drawing.Color.Red;
             this.btnNuevaVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaVenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevaVenta.Location = new System.Drawing.Point(756, 332);
+            this.btnNuevaVenta.Location = new System.Drawing.Point(721, 332);
             this.btnNuevaVenta.Name = "btnNuevaVenta";
             this.btnNuevaVenta.Size = new System.Drawing.Size(181, 40);
             this.btnNuevaVenta.TabIndex = 99;
@@ -628,7 +628,7 @@
             this.panel1.Location = new System.Drawing.Point(14, 85);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1527, 3);
+            this.panel1.Size = new System.Drawing.Size(1482, 3);
             this.panel1.TabIndex = 96;
             // 
             // btnFinalizarVenta
@@ -636,7 +636,7 @@
             this.btnFinalizarVenta.BackColor = System.Drawing.Color.SteelBlue;
             this.btnFinalizarVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizarVenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFinalizarVenta.Location = new System.Drawing.Point(1130, 332);
+            this.btnFinalizarVenta.Location = new System.Drawing.Point(1095, 332);
             this.btnFinalizarVenta.Name = "btnFinalizarVenta";
             this.btnFinalizarVenta.Size = new System.Drawing.Size(181, 40);
             this.btnFinalizarVenta.TabIndex = 106;
@@ -652,9 +652,9 @@
             this.groupBox1.Controls.Add(this.txtBuscarProductoCatalogo);
             this.groupBox1.Controls.Add(this.dgvCatalogoProductos);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.groupBox1.Location = new System.Drawing.Point(24, 98);
+            this.groupBox1.Location = new System.Drawing.Point(14, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 558);
+            this.groupBox1.Size = new System.Drawing.Size(329, 558);
             this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catálogo de Productos";
@@ -664,7 +664,7 @@
             this.lblTotalProductosCatalogo.AutoSize = true;
             this.lblTotalProductosCatalogo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProductosCatalogo.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTotalProductosCatalogo.Location = new System.Drawing.Point(17, 83);
+            this.lblTotalProductosCatalogo.Location = new System.Drawing.Point(3, 83);
             this.lblTotalProductosCatalogo.Name = "lblTotalProductosCatalogo";
             this.lblTotalProductosCatalogo.Size = new System.Drawing.Size(156, 17);
             this.lblTotalProductosCatalogo.TabIndex = 3;
@@ -673,7 +673,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 25);
+            this.label6.Location = new System.Drawing.Point(2, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(244, 21);
             this.label6.TabIndex = 2;
@@ -681,7 +681,7 @@
             // 
             // txtBuscarProductoCatalogo
             // 
-            this.txtBuscarProductoCatalogo.Location = new System.Drawing.Point(17, 49);
+            this.txtBuscarProductoCatalogo.Location = new System.Drawing.Point(6, 49);
             this.txtBuscarProductoCatalogo.Name = "txtBuscarProductoCatalogo";
             this.txtBuscarProductoCatalogo.Size = new System.Drawing.Size(316, 29);
             this.txtBuscarProductoCatalogo.TabIndex = 1;
@@ -691,7 +691,7 @@
             // 
             this.dgvCatalogoProductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvCatalogoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatalogoProductos.Location = new System.Drawing.Point(17, 103);
+            this.dgvCatalogoProductos.Location = new System.Drawing.Point(6, 103);
             this.dgvCatalogoProductos.Name = "dgvCatalogoProductos";
             this.dgvCatalogoProductos.ReadOnly = true;
             this.dgvCatalogoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -715,7 +715,7 @@
             this.btnBuscarProducto.BackColor = System.Drawing.Color.DimGray;
             this.btnBuscarProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProducto.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(943, 332);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(908, 332);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(181, 40);
             this.btnBuscarProducto.TabIndex = 98;
@@ -738,7 +738,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.lblAtajos);
             this.Controls.Add(this.lblMensajeAgregado);
             this.Controls.Add(this.groupBox1);

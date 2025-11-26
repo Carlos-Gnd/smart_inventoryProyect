@@ -104,7 +104,7 @@
             this.panel1.Location = new System.Drawing.Point(197, 202);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(688, 2);
+            this.panel1.Size = new System.Drawing.Size(888, 2);
             this.panel1.TabIndex = 43;
             // 
             // label8
@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.lblUsuarioActual);
             this.Controls.Add(this.picGenerarReportes);

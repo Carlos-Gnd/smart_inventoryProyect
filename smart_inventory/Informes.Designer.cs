@@ -86,7 +86,7 @@
             this.gbTablaVentas.ForeColor = System.Drawing.Color.White;
             this.gbTablaVentas.Location = new System.Drawing.Point(19, 445);
             this.gbTablaVentas.Name = "gbTablaVentas";
-            this.gbTablaVentas.Size = new System.Drawing.Size(757, 259);
+            this.gbTablaVentas.Size = new System.Drawing.Size(940, 259);
             this.gbTablaVentas.TabIndex = 80;
             this.gbTablaVentas.TabStop = false;
             this.gbTablaVentas.Text = "Tabla de Ventas";
@@ -110,7 +110,7 @@
             this.dgvTablaVentas.Location = new System.Drawing.Point(6, 36);
             this.dgvTablaVentas.Name = "dgvTablaVentas";
             this.dgvTablaVentas.RowHeadersWidth = 51;
-            this.dgvTablaVentas.Size = new System.Drawing.Size(736, 212);
+            this.dgvTablaVentas.Size = new System.Drawing.Size(919, 212);
             this.dgvTablaVentas.TabIndex = 0;
             // 
             // btnExportarExcelProd
@@ -148,7 +148,7 @@
             this.gbTablaProductos.ForeColor = System.Drawing.Color.White;
             this.gbTablaProductos.Location = new System.Drawing.Point(19, 125);
             this.gbTablaProductos.Name = "gbTablaProductos";
-            this.gbTablaProductos.Size = new System.Drawing.Size(757, 259);
+            this.gbTablaProductos.Size = new System.Drawing.Size(940, 259);
             this.gbTablaProductos.TabIndex = 79;
             this.gbTablaProductos.TabStop = false;
             this.gbTablaProductos.Text = "Tabla de Productos";
@@ -173,7 +173,7 @@
             this.dgvTablaProductos.Location = new System.Drawing.Point(6, 36);
             this.dgvTablaProductos.Name = "dgvTablaProductos";
             this.dgvTablaProductos.RowHeadersWidth = 51;
-            this.dgvTablaProductos.Size = new System.Drawing.Size(736, 212);
+            this.dgvTablaProductos.Size = new System.Drawing.Size(919, 212);
             this.dgvTablaProductos.TabIndex = 0;
             // 
             // btnExportarPDFprod
@@ -211,7 +211,7 @@
             this.panel1.Location = new System.Drawing.Point(9, 71);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(733, 3);
+            this.panel1.Size = new System.Drawing.Size(916, 3);
             this.panel1.TabIndex = 75;
             // 
             // Informes
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.btnExportarExcelVentas);
             this.Controls.Add(this.btnExportarPDFventas);
             this.Controls.Add(this.gbTablaVentas);

@@ -241,7 +241,7 @@
             this.pnlRightForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRightForm.Location = new System.Drawing.Point(920, 0);
             this.pnlRightForm.Name = "pnlRightForm";
-            this.pnlRightForm.Size = new System.Drawing.Size(64, 661);
+            this.pnlRightForm.Size = new System.Drawing.Size(264, 661);
             this.pnlRightForm.TabIndex = 1;
             // 
             // lblMensaje
@@ -413,7 +413,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.pnlRightForm);
             this.Controls.Add(this.pnlLeftBranding);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
