@@ -95,8 +95,11 @@ namespace CapaDatos
                     SELECT 
                         v.IdVenta, v.Fecha, v.IdUsuario, 
                         u.Nombre + ' ' + u.Apellido as NombreCompleto,
-                        v.Total, v.MetodoPago, v.Comentario, v.Estado, v.FechaVenta,
-                        (SELECT ISNULL(SUM(dv.Cantidad), 0) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta) AS CantidadTotalProductos
+                        v.Total, v.MetodoPago, 
+                        ISNULL(v.Comentario, '') as Comentario, 
+                        v.Estado, 
+                        v.FechaVenta,
+                        ISNULL((SELECT SUM(dv.Cantidad) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta), 0) AS CantidadTotalProductos
                     FROM Ventas v
                     INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
                     ORDER BY v.FechaVenta DESC";
@@ -106,7 +109,21 @@ namespace CapaDatos
 
                 while (reader.Read())
                 {
-                    Venta nuevaVenta = new Venta() // Usamos una variable nueva para claridad
+                    // Leer Estado de forma segura
+                    bool estado = false;
+                    object estadoValue = reader["Estado"];
+
+                    if (estadoValue != DBNull.Value)
+                    {
+                        if (estadoValue is bool)
+                            estado = (bool)estadoValue;
+                        else if (estadoValue is string)
+                            estado = estadoValue.ToString() == "1" || estadoValue.ToString().ToLower() == "true" || estadoValue.ToString().ToLower() == "activo";
+                        else if (estadoValue is int || estadoValue is byte)
+                            estado = Convert.ToInt32(estadoValue) == 1;
+                    }
+
+                    Venta nuevaVenta = new Venta()
                     {
                         IdVenta = Convert.ToInt32(reader["IdVenta"]),
                         Fecha = Convert.ToDateTime(reader["Fecha"]),
@@ -119,7 +136,7 @@ namespace CapaDatos
                         Total = Convert.ToDecimal(reader["Total"]),
                         MetodoPago = reader["MetodoPago"].ToString(),
                         Comentario = reader["Comentario"].ToString(),
-                        Estado = Convert.ToBoolean(reader["Estado"]),
+                        Estado = estado,
                         FechaVenta = Convert.ToDateTime(reader["FechaVenta"]),
                         CantidadTotalProductos = Convert.ToInt32(reader["CantidadTotalProductos"])
                     };
@@ -127,9 +144,9 @@ namespace CapaDatos
                 }
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // ...
+                throw new Exception("Error al listar ventas: " + ex.Message);
             }
             finally
             {
@@ -138,7 +155,7 @@ namespace CapaDatos
             return lista;
         }
 
-        // Listar ventas por usuario
+        // Listar ventas por usuario - CORREGIDO
         public List<Venta> ListarPorUsuario(int idUsuario)
         {
             List<Venta> lista = new List<Venta>();
@@ -148,23 +165,23 @@ namespace CapaDatos
             {
                 conexion = Conexion.ObtenerConexion();
 
-                // CONSULTA SQL (INCLUYENDO el cálculo de productos)
+                // CONSULTA CORREGIDA - Convertir Estado a BIT si es string
                 string query = @"
-                                SELECT 
-                                    v.IdVenta, 
-                                    v.Fecha, 
-                                    v.IdUsuario, 
-                                    u.Nombre + ' ' + u.Apellido as NombreCompleto,
-                                    v.Total, 
-                                    v.MetodoPago, 
-                                    v.Comentario, 
-                                    v.Estado, 
-                                    v.FechaVenta,
-                                    (SELECT ISNULL(SUM(dv.Cantidad), 0) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta) AS CantidadTotalProductos
-                                FROM Ventas v
-                                INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
-                                WHERE v.IdUsuario = @IdUsuario -- Asegura que solo trae las del usuario
-                                ORDER BY v.FechaVenta DESC";
+                    SELECT 
+                        v.IdVenta, 
+                        v.Fecha, 
+                        v.IdUsuario, 
+                        u.Nombre + ' ' + u.Apellido as NombreCompleto,
+                        v.Total, 
+                        v.MetodoPago, 
+                        ISNULL(v.Comentario, '') as Comentario, 
+                        v.Estado,
+                        v.FechaVenta,
+                        ISNULL((SELECT SUM(dv.Cantidad) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta), 0) AS CantidadTotalProductos
+                    FROM Ventas v
+                    INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
+                    WHERE v.IdUsuario = @IdUsuario
+                    ORDER BY v.FechaVenta DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
@@ -172,6 +189,31 @@ namespace CapaDatos
 
                 while (reader.Read())
                 {
+                    // Leer Estado de forma segura según su tipo
+                    bool estado = false;
+                    object estadoValue = reader["Estado"];
+
+                    if (estadoValue != DBNull.Value)
+                    {
+                        // Si es bit (boolean nativo)
+                        if (estadoValue is bool)
+                        {
+                            estado = (bool)estadoValue;
+                        }
+                        // Si es string ("1", "0", "True", "False", etc.)
+                        else if (estadoValue is string)
+                        {
+                            string estadoStr = estadoValue.ToString();
+                            estado = estadoStr == "1" || estadoStr.ToLower() == "true" || estadoStr.ToLower() == "activo";
+                        }
+                        // Si es int (1, 0)
+                        else if (estadoValue is int || estadoValue is byte)
+                        {
+                            estado = Convert.ToInt32(estadoValue) == 1;
+                        }
+                    }
+
+                    // LECTURA SEGURA de cada campo
                     Venta venta = new Venta()
                     {
                         IdVenta = Convert.ToInt32(reader["IdVenta"]),
@@ -185,9 +227,8 @@ namespace CapaDatos
                         Total = Convert.ToDecimal(reader["Total"]),
                         MetodoPago = reader["MetodoPago"].ToString(),
                         Comentario = reader["Comentario"].ToString(),
-                        Estado = reader.IsDBNull(reader.GetOrdinal("Estado")) ? false : reader.GetBoolean(reader.GetOrdinal("Estado")),
+                        Estado = estado,
                         FechaVenta = Convert.ToDateTime(reader["FechaVenta"]),
-                        // Mapea la columna calculada a la propiedad de la entidad
                         CantidadTotalProductos = Convert.ToInt32(reader["CantidadTotalProductos"])
                     };
                     lista.Add(venta);
@@ -196,7 +237,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al listar ventas por usuario: " + ex.Message);
+                throw new Exception("Error al listar ventas por usuario: " + ex.Message + " | StackTrace: " + ex.StackTrace);
             }
             finally
             {
@@ -266,24 +307,41 @@ namespace CapaDatos
             {
                 conexion = Conexion.ObtenerConexion();
                 string query = @"
-            SELECT 
-                v.IdVenta, v.Fecha, v.IdUsuario, 
-                u.Nombre + ' ' + u.Apellido as NombreCompleto,
-                v.Total, v.MetodoPago, v.Comentario, v.Estado, v.FechaVenta,
-                (SELECT ISNULL(SUM(dv.Cantidad), 0) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta) AS CantidadTotalProductos
-            FROM Ventas v
-            INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
-            WHERE v.FechaVenta BETWEEN @FechaInicio AND @FechaFin -- ¡Este filtro es clave!
-            ORDER BY v.FechaVenta DESC";
+                    SELECT 
+                        v.IdVenta, v.Fecha, v.IdUsuario, 
+                        u.Nombre + ' ' + u.Apellido as NombreCompleto,
+                        v.Total, v.MetodoPago, 
+                        ISNULL(v.Comentario, '') as Comentario, 
+                        v.Estado, 
+                        v.FechaVenta,
+                        ISNULL((SELECT SUM(dv.Cantidad) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta), 0) AS CantidadTotalProductos
+                    FROM Ventas v
+                    INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
+                    WHERE v.FechaVenta BETWEEN @FechaInicio AND @FechaFin
+                    ORDER BY v.FechaVenta DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
-                cmd.Parameters.AddWithValue("@FechaFin", fechaFin.Date);
+                cmd.Parameters.AddWithValue("@FechaFin", fechaFin.Date.AddDays(1).AddSeconds(-1)); // Incluir todo el día
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Venta nuevaVenta = new Venta() // Usamos una variable nueva para claridad
+                    // Leer Estado de forma segura
+                    bool estado = false;
+                    object estadoValue = reader["Estado"];
+
+                    if (estadoValue != DBNull.Value)
+                    {
+                        if (estadoValue is bool)
+                            estado = (bool)estadoValue;
+                        else if (estadoValue is string)
+                            estado = estadoValue.ToString() == "1" || estadoValue.ToString().ToLower() == "true" || estadoValue.ToString().ToLower() == "activo";
+                        else if (estadoValue is int || estadoValue is byte)
+                            estado = Convert.ToInt32(estadoValue) == 1;
+                    }
+
+                    Venta nuevaVenta = new Venta()
                     {
                         IdVenta = Convert.ToInt32(reader["IdVenta"]),
                         Fecha = Convert.ToDateTime(reader["Fecha"]),
@@ -296,7 +354,7 @@ namespace CapaDatos
                         Total = Convert.ToDecimal(reader["Total"]),
                         MetodoPago = reader["MetodoPago"].ToString(),
                         Comentario = reader["Comentario"].ToString(),
-                        Estado = Convert.ToBoolean(reader["Estado"]),
+                        Estado = estado,
                         FechaVenta = Convert.ToDateTime(reader["FechaVenta"]),
                         CantidadTotalProductos = Convert.ToInt32(reader["CantidadTotalProductos"])
                     };
@@ -304,9 +362,9 @@ namespace CapaDatos
                 }
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // ...
+                throw new Exception("Error al listar ventas por fechas: " + ex.Message);
             }
             finally
             {
