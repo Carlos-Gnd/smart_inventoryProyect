@@ -50,6 +50,17 @@ namespace smart_inventory
 
             // Cargar datos iniciales
             CargarReporteVentas();
+
+            ConfigurarBotonRegreso();
+        }
+
+        private void ConfigurarBotonRegreso()
+        {
+            if (this.Controls.Find("btnRegresar", true).Length > 0)
+            {
+                Button btnRegresar = (Button)this.Controls.Find("btnRegresar", true)[0];
+                btnRegresar.Click += btnRegresar_Click;
+            }
         }
 
         private void ConfigurarFechas()
@@ -501,5 +512,9 @@ namespace smart_inventory
             }
         }
 
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

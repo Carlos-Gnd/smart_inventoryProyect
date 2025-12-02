@@ -42,6 +42,7 @@
             this.btnExportarPDFprod = new System.Windows.Forms.Button();
             this.pic_users = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbTablaVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaVentas)).BeginInit();
             this.gbTablaProductos.SuspendLayout();
@@ -86,7 +87,7 @@
             this.gbTablaVentas.ForeColor = System.Drawing.Color.White;
             this.gbTablaVentas.Location = new System.Drawing.Point(19, 445);
             this.gbTablaVentas.Name = "gbTablaVentas";
-            this.gbTablaVentas.Size = new System.Drawing.Size(940, 259);
+            this.gbTablaVentas.Size = new System.Drawing.Size(923, 259);
             this.gbTablaVentas.TabIndex = 80;
             this.gbTablaVentas.TabStop = false;
             this.gbTablaVentas.Text = "Tabla de Ventas";
@@ -110,7 +111,7 @@
             this.dgvTablaVentas.Location = new System.Drawing.Point(6, 36);
             this.dgvTablaVentas.Name = "dgvTablaVentas";
             this.dgvTablaVentas.RowHeadersWidth = 51;
-            this.dgvTablaVentas.Size = new System.Drawing.Size(919, 212);
+            this.dgvTablaVentas.Size = new System.Drawing.Size(902, 212);
             this.dgvTablaVentas.TabIndex = 0;
             // 
             // btnExportarExcelProd
@@ -148,7 +149,7 @@
             this.gbTablaProductos.ForeColor = System.Drawing.Color.White;
             this.gbTablaProductos.Location = new System.Drawing.Point(19, 125);
             this.gbTablaProductos.Name = "gbTablaProductos";
-            this.gbTablaProductos.Size = new System.Drawing.Size(940, 259);
+            this.gbTablaProductos.Size = new System.Drawing.Size(923, 259);
             this.gbTablaProductos.TabIndex = 79;
             this.gbTablaProductos.TabStop = false;
             this.gbTablaProductos.Text = "Tabla de Productos";
@@ -173,7 +174,7 @@
             this.dgvTablaProductos.Location = new System.Drawing.Point(6, 36);
             this.dgvTablaProductos.Name = "dgvTablaProductos";
             this.dgvTablaProductos.RowHeadersWidth = 51;
-            this.dgvTablaProductos.Size = new System.Drawing.Size(919, 212);
+            this.dgvTablaProductos.Size = new System.Drawing.Size(902, 212);
             this.dgvTablaProductos.TabIndex = 0;
             // 
             // btnExportarPDFprod
@@ -211,8 +212,22 @@
             this.panel1.Location = new System.Drawing.Point(9, 71);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 3);
+            this.panel1.Size = new System.Drawing.Size(899, 3);
             this.panel1.TabIndex = 75;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(823, 19);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 85;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // Informes
             // 
@@ -220,6 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnExportarExcelVentas);
             this.Controls.Add(this.btnExportarPDFventas);
             this.Controls.Add(this.gbTablaVentas);
@@ -263,5 +279,6 @@
         private System.Windows.Forms.Button btnExportarPDFprod;
         private System.Windows.Forms.PictureBox pic_users;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

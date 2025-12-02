@@ -35,6 +35,16 @@ namespace smart_inventory
             // Maximizar ventana
             this.WindowState = FormWindowState.Maximized;
 
+            // Configurar título según el rol
+            if (usuarioActual.IdRol == 1) // Administrador
+            {
+                this.Text = "Historial de Todas las Ventas - Administrador";
+            }
+            else // Cajero
+            {
+                this.Text = $"Mis Ventas - {usuarioActual.Nombre} {usuarioActual.Apellido}";
+            }
+
             // Configurar DataGridView
             ConfigurarDataGridView();
 
@@ -43,6 +53,18 @@ namespace smart_inventory
 
             // Cargar las ventas del usuario
             CargarVentasPropias();
+
+            // Configurar botón de regreso
+            ConfigurarBotonRegreso();
+        }
+
+        private void ConfigurarBotonRegreso()
+        {
+            if (this.Controls.Find("btnRegresar", true).Length > 0)
+            {
+                Button btnRegresar = (Button)this.Controls.Find("btnRegresar", true)[0];
+                btnRegresar.Click += btnRegresar_Click;
+            }
         }
 
         private void ConfigurarDataGridView()
@@ -133,8 +155,18 @@ namespace smart_inventory
         {
             try
             {
-                // Obtener SOLO las ventas del usuario actual (IdUsuario)
-                listaVentasPropias = negocioVenta.ListarPorUsuario(usuarioActual.IdUsuario);
+                // Si es administrador (IdRol == 1), mostrar TODAS las ventas
+                // Si es cajero (IdRol == 2), mostrar solo sus ventas
+                if (usuarioActual.IdRol == 1) // Administrador
+                {
+                    // Obtener TODAS las ventas
+                    listaVentasPropias = negocioVenta.Listar();
+                }
+                else // Cajero
+                {
+                    // Obtener SOLO las ventas del usuario actual
+                    listaVentasPropias = negocioVenta.ListarPorUsuario(usuarioActual.IdUsuario);
+                }
 
                 // Ordenar por fecha descendente (más recientes primero)
                 listaVentasPropias = listaVentasPropias.OrderByDescending(v => v.FechaVenta).ToList();
@@ -591,6 +623,11 @@ namespace smart_inventory
         public void RefrescarVentas()
         {
             CargarVentasPropias();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

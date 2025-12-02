@@ -51,6 +51,7 @@
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.gbDetalleVenta = new System.Windows.Forms.GroupBox();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).BeginInit();
             this.gbFiltros.SuspendLayout();
             this.gbListaVentas.SuspendLayout();
@@ -311,12 +312,27 @@
             this.dgvDetalleVenta.Size = new System.Drawing.Size(824, 230);
             this.dgvDetalleVenta.TabIndex = 1;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(1032, 18);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 85;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.gbDetalleVenta);
             this.Controls.Add(this.gbListaVentas);
             this.Controls.Add(this.gbFiltros);
@@ -366,5 +382,6 @@
         private System.Windows.Forms.Button btnExportarPDF;
         private System.Windows.Forms.Button btnExportarExcel;
         private System.Windows.Forms.Button btnVerDetalles;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

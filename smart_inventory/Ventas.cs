@@ -49,9 +49,21 @@
 
                 // Cargar ventas iniciales
                 CargarVentas();
+
+                // Configurar botón de regreso
+                ConfigurarBotonRegreso();
             }
 
-            private void ConfigurarDataGridViewVentas()
+        private void ConfigurarBotonRegreso()
+            {
+                if (this.Controls.Find("btnRegresar", true).Length > 0)
+                {
+                    Button btnRegresar = (Button)this.Controls.Find("btnRegresar", true)[0];
+                    btnRegresar.Click += btnRegresar_Click;
+                }
+            }
+
+        private void ConfigurarDataGridViewVentas()
             {
                 dgvVentas.AutoGenerateColumns = false;
                 dgvVentas.AllowUserToAddRows = false;
@@ -212,14 +224,26 @@
                 try
                 {
                     listaVentas = negocioVenta.Listar();
-                    MostrarVentas(listaVentas);
+
+                    if (listaVentas != null && listaVentas.Count > 0)
+                    {
+                        MostrarVentas(listaVentas);
+                    }
+                    else
+                    {
+                        dgvVentas.Rows.Clear();
+                        lblTotalVentas.Text = "Total: 0 ventas | Monto Total: $0.00";
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar ventas: " + ex.Message, "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar ventas: " + ex.Message + "\n\nDetalle: " + ex.StackTrace,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgvVentas.Rows.Clear();
+                    lblTotalVentas.Text = "Total: 0 ventas | Monto Total: $0.00";
                 }
             }
+
 
             private void MostrarVentas(List<Venta> ventas)
             {
@@ -504,5 +528,10 @@
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+    }
     }

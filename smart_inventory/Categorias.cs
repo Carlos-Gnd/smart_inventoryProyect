@@ -36,6 +36,17 @@ namespace smart_inventory
 
             // Checkbox activo por defecto
             chkActivo.Checked = true;
+
+            ConfigurarBotonRegreso();
+        }
+
+        private void ConfigurarBotonRegreso()
+        {
+            if (this.Controls.Find("btnRegresar", true).Length > 0)
+            {
+                Button btnRegresar = (Button)this.Controls.Find("btnRegresar", true)[0];
+                btnRegresar.Click += btnRegresar_Click;
+            }
         }
 
         private void ConfigurarDataGridView()
@@ -239,13 +250,28 @@ namespace smart_inventory
 
         private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvCategorias.Rows.Count)
             {
-                categoriaSeleccionada = listaCategorias[e.RowIndex];
+                try
+                {
+                    // Obtener el ID de la categoría de la fila seleccionada
+                    int idCategoria = Convert.ToInt32(dgvCategorias.Rows[e.RowIndex].Cells["IdCategoria"].Value);
 
-                // Cargar datos en los controles
-                txtNombre.Text = categoriaSeleccionada.Nombre;
-                txtDescripcion.Text = categoriaSeleccionada.Descripcion;
+                    // Buscar la categoría en la lista por su ID
+                    categoriaSeleccionada = listaCategorias.FirstOrDefault(c => c.IdCategoria == idCategoria);
+
+                    if (categoriaSeleccionada != null)
+                    {
+                        // Cargar datos en los controles
+                        txtNombre.Text = categoriaSeleccionada.Nombre;
+                        txtDescripcion.Text = categoriaSeleccionada.Descripcion;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al seleccionar categoría: " + ex.Message, "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -258,14 +284,7 @@ namespace smart_inventory
                 if (string.IsNullOrWhiteSpace(filtro))
                 {
                     // Mostrar todas las categorías
-                    dgvCategorias.Rows.Clear();
-                    foreach (Categoria categoria in listaCategorias)
-                    {
-                        int index = dgvCategorias.Rows.Add();
-                        dgvCategorias.Rows[index].Cells["IdCategoria"].Value = categoria.IdCategoria;
-                        dgvCategorias.Rows[index].Cells["Nombre"].Value = categoria.Nombre;
-                        dgvCategorias.Rows[index].Cells["Descripcion"].Value = categoria.Descripcion;
-                    }
+                    MostrarTodasCategorias();
                 }
                 else
                 {
@@ -275,14 +294,7 @@ namespace smart_inventory
                         (c.Descripcion != null && c.Descripcion.ToLower().Contains(filtro))
                     ).ToList();
 
-                    dgvCategorias.Rows.Clear();
-                    foreach (Categoria categoria in listaFiltrada)
-                    {
-                        int index = dgvCategorias.Rows.Add();
-                        dgvCategorias.Rows[index].Cells["IdCategoria"].Value = categoria.IdCategoria;
-                        dgvCategorias.Rows[index].Cells["Nombre"].Value = categoria.Nombre;
-                        dgvCategorias.Rows[index].Cells["Descripcion"].Value = categoria.Descripcion;
-                    }
+                    MostrarCategoriasFiltradas(listaFiltrada);
                 }
 
                 lblTotalCategorias.Text = $"Total: {dgvCategorias.Rows.Count}";
@@ -291,6 +303,30 @@ namespace smart_inventory
             {
                 MessageBox.Show("Error al buscar: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MostrarTodasCategorias()
+        {
+            dgvCategorias.Rows.Clear();
+            foreach (Categoria categoria in listaCategorias)
+            {
+                int index = dgvCategorias.Rows.Add();
+                dgvCategorias.Rows[index].Cells["IdCategoria"].Value = categoria.IdCategoria;
+                dgvCategorias.Rows[index].Cells["Nombre"].Value = categoria.Nombre;
+                dgvCategorias.Rows[index].Cells["Descripcion"].Value = categoria.Descripcion;
+            }
+        }
+
+        private void MostrarCategoriasFiltradas(List<Categoria> categoriasFiltradas)
+        {
+            dgvCategorias.Rows.Clear();
+            foreach (Categoria categoria in categoriasFiltradas)
+            {
+                int index = dgvCategorias.Rows.Add();
+                dgvCategorias.Rows[index].Cells["IdCategoria"].Value = categoria.IdCategoria;
+                dgvCategorias.Rows[index].Cells["Nombre"].Value = categoria.Nombre;
+                dgvCategorias.Rows[index].Cells["Descripcion"].Value = categoria.Descripcion;
             }
         }
 
@@ -329,6 +365,11 @@ namespace smart_inventory
             // TODO: esta línea de código carga datos en la tabla 'smart_InventoryDataSet.Categorias' Puede moverla o quitarla según sea necesario.
             this.categoriasTableAdapter.Fill(this.smart_InventoryDataSet.Categorias);
 
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

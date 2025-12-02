@@ -65,6 +65,17 @@ namespace smart_inventory
             lblAtajos.Text = "F1: Enfocar búsqueda de catálogo      F2: Agregar producto" +
                 "       F3: Quitar producto     F5: Nueva venta" +
                 "       F12: Finalizar venta     ESC: Limpiar campos de producto";
+
+            ConfigurarBotonRegreso();
+        }
+
+        private void ConfigurarBotonRegreso()
+        {
+            if (this.Controls.Find("btnRegresar", true).Length > 0)
+            {
+                Button btnRegresar = (Button)this.Controls.Find("btnRegresar", true)[0];
+                btnRegresar.Click += btnRegresar_Click;
+            }
         }
 
         private void ConfigurarDataGridView()
@@ -1039,6 +1050,11 @@ namespace smart_inventory
                 e.SuppressKeyPress = true;
                 btnAgregarProducto_Click(sender, e);
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

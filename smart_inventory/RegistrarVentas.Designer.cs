@@ -85,6 +85,7 @@
             this.lblMensajeAgregado = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.lblAtajos = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDatosVenta.SuspendLayout();
             this.gbComentarios.SuspendLayout();
@@ -628,7 +629,7 @@
             this.panel1.Location = new System.Drawing.Point(14, 85);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1482, 3);
+            this.panel1.Size = new System.Drawing.Size(1623, 3);
             this.panel1.TabIndex = 96;
             // 
             // btnFinalizarVenta
@@ -733,12 +734,27 @@
             this.lblAtajos.TabIndex = 110;
             this.lblAtajos.Text = "Atajos de teclado:";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(1089, 19);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 111;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // RegistrarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblAtajos);
             this.Controls.Add(this.lblMensajeAgregado);
             this.Controls.Add(this.groupBox1);
@@ -842,5 +858,6 @@
         private System.Windows.Forms.Label lblDescuento;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.Label lblAtajos;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
