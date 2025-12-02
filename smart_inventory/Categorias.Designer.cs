@@ -55,6 +55,7 @@
             this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.categoriasTableAdapter = new smart_inventory.Smart_InventoryDataSetTableAdapters.CategoriasTableAdapter();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).BeginInit();
             this.gbDatosCategoria.SuspendLayout();
             this.gbListaCategorias.SuspendLayout();
@@ -70,7 +71,7 @@
             this.btnEditarCategoria.BackColor = System.Drawing.Color.ForestGreen;
             this.btnEditarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEditarCategoria.Location = new System.Drawing.Point(666, 162);
+            this.btnEditarCategoria.Location = new System.Drawing.Point(632, 162);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnEditarCategoria.TabIndex = 61;
@@ -84,7 +85,7 @@
             this.btnBorrarCategoria.BackColor = System.Drawing.Color.Red;
             this.btnBorrarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBorrarCategoria.Location = new System.Drawing.Point(666, 230);
+            this.btnBorrarCategoria.Location = new System.Drawing.Point(632, 230);
             this.btnBorrarCategoria.Name = "btnBorrarCategoria";
             this.btnBorrarCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnBorrarCategoria.TabIndex = 60;
@@ -113,7 +114,7 @@
             this.panel1.Location = new System.Drawing.Point(18, 84);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 3);
+            this.panel1.Size = new System.Drawing.Size(962, 3);
             this.panel1.TabIndex = 55;
             // 
             // gbDatosCategoria
@@ -129,7 +130,7 @@
             this.gbDatosCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatosCategoria.Location = new System.Drawing.Point(23, 95);
             this.gbDatosCategoria.Name = "gbDatosCategoria";
-            this.gbDatosCategoria.Size = new System.Drawing.Size(550, 240);
+            this.gbDatosCategoria.Size = new System.Drawing.Size(516, 240);
             this.gbDatosCategoria.TabIndex = 57;
             this.gbDatosCategoria.TabStop = false;
             this.gbDatosCategoria.Text = "Datos de la Categoria";
@@ -182,7 +183,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.DimGray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLimpiar.Location = new System.Drawing.Point(666, 296);
+            this.btnLimpiar.Location = new System.Drawing.Point(632, 296);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(199, 40);
             this.btnLimpiar.TabIndex = 59;
@@ -196,7 +197,7 @@
             this.btnNuevoCategoria.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnNuevoCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(666, 95);
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(632, 95);
             this.btnNuevoCategoria.Name = "btnNuevoCategoria";
             this.btnNuevoCategoria.Size = new System.Drawing.Size(199, 40);
             this.btnNuevoCategoria.TabIndex = 58;
@@ -225,7 +226,7 @@
             this.gbListaCategorias.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbListaCategorias.Location = new System.Drawing.Point(23, 442);
             this.gbListaCategorias.Name = "gbListaCategorias";
-            this.gbListaCategorias.Size = new System.Drawing.Size(842, 259);
+            this.gbListaCategorias.Size = new System.Drawing.Size(808, 259);
             this.gbListaCategorias.TabIndex = 62;
             this.gbListaCategorias.TabStop = false;
             this.gbListaCategorias.Text = "Lista de Categorias";
@@ -255,7 +256,7 @@
             this.dgvCategorias.Location = new System.Drawing.Point(6, 36);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 51;
-            this.dgvCategorias.Size = new System.Drawing.Size(804, 212);
+            this.dgvCategorias.Size = new System.Drawing.Size(770, 212);
             this.dgvCategorias.TabIndex = 0;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             // 
@@ -301,7 +302,7 @@
             this.gbBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbBusqueda.Location = new System.Drawing.Point(23, 354);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(842, 69);
+            this.gbBusqueda.Size = new System.Drawing.Size(808, 69);
             this.gbBusqueda.TabIndex = 63;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Categoria";
@@ -312,7 +313,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarCategoria.Location = new System.Drawing.Point(62, 28);
             this.txtBuscarCategoria.Name = "txtBuscarCategoria";
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(757, 29);
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(723, 29);
             this.txtBuscarCategoria.TabIndex = 1;
             this.txtBuscarCategoria.TextChanged += new System.EventHandler(this.txtBuscarCategoria_TextChanged);
             // 
@@ -329,12 +330,27 @@
             // 
             this.categoriasTableAdapter.ClearBeforeFill = true;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(861, 26);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 64;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.btnEditarCategoria);
             this.Controls.Add(this.btnBorrarCategoria);
@@ -394,5 +410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

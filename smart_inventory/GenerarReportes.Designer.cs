@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFechaInicio = new System.Windows.Forms.TextBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbTablaVentasPropias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_users)).BeginInit();
@@ -239,12 +240,27 @@
             this.txtFechaInicio.Size = new System.Drawing.Size(151, 17);
             this.txtFechaInicio.TabIndex = 78;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(1021, 26);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 84;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // GenerarReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.label4);
@@ -289,5 +305,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFechaInicio;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

@@ -91,38 +91,33 @@ namespace CapaDatos
             try
             {
                 conexion = Conexion.ObtenerConexion();
+
                 string query = @"
-                    SELECT 
-                        v.IdVenta, v.Fecha, v.IdUsuario, 
-                        u.Nombre + ' ' + u.Apellido as NombreCompleto,
-                        v.Total, v.MetodoPago, 
-                        ISNULL(v.Comentario, '') as Comentario, 
-                        v.Estado, 
-                        v.FechaVenta,
-                        ISNULL((SELECT SUM(dv.Cantidad) FROM DetalleVenta dv WHERE dv.IdVenta = v.IdVenta), 0) AS CantidadTotalProductos
-                    FROM Ventas v
-                    INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
-                    ORDER BY v.FechaVenta DESC";
+            SELECT
+                v.IdVenta, 
+                v.Fecha, 
+                v.IdUsuario,
+                u.Nombre + ' ' + u.Apellido as NombreCompleto,
+                v.Total, 
+                v.MetodoPago,
+                ISNULL(v.Comentario, '') as Comentario,
+                CASE 
+                    WHEN v.Estado = '1' OR v.Estado = 'Activo' THEN 1
+                    ELSE 0
+                END as EstadoBit,
+                v.FechaVenta,
+                ISNULL((SELECT SUM(dv.Cantidad) 
+                        FROM DetalleVenta dv 
+                        WHERE dv.IdVenta = v.IdVenta), 0) AS CantidadTotalProductos
+            FROM Ventas v
+            INNER JOIN Usuarios u ON v.IdUsuario = u.IdUsuario
+            ORDER BY v.FechaVenta DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    // Leer Estado de forma segura
-                    bool estado = false;
-                    object estadoValue = reader["Estado"];
-
-                    if (estadoValue != DBNull.Value)
-                    {
-                        if (estadoValue is bool)
-                            estado = (bool)estadoValue;
-                        else if (estadoValue is string)
-                            estado = estadoValue.ToString() == "1" || estadoValue.ToString().ToLower() == "true" || estadoValue.ToString().ToLower() == "activo";
-                        else if (estadoValue is int || estadoValue is byte)
-                            estado = Convert.ToInt32(estadoValue) == 1;
-                    }
-
                     Venta nuevaVenta = new Venta()
                     {
                         IdVenta = Convert.ToInt32(reader["IdVenta"]),
@@ -136,12 +131,14 @@ namespace CapaDatos
                         Total = Convert.ToDecimal(reader["Total"]),
                         MetodoPago = reader["MetodoPago"].ToString(),
                         Comentario = reader["Comentario"].ToString(),
-                        Estado = estado,
+                        Estado = Convert.ToBoolean(reader["EstadoBit"]),
                         FechaVenta = Convert.ToDateTime(reader["FechaVenta"]),
                         CantidadTotalProductos = Convert.ToInt32(reader["CantidadTotalProductos"])
                     };
+
                     lista.Add(nuevaVenta);
                 }
+
                 reader.Close();
             }
             catch (Exception ex)
@@ -152,6 +149,7 @@ namespace CapaDatos
             {
                 Conexion.CerrarConexion(conexion);
             }
+
             return lista;
         }
 

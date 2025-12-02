@@ -44,6 +44,7 @@
             this.btnExportarPDF = new System.Windows.Forms.Button();
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.btnImprimirTicket = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbBusqueda.SuspendLayout();
             this.gbTablaVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaVentasPropias)).BeginInit();
@@ -231,12 +232,27 @@
             this.btnImprimirTicket.UseVisualStyleBackColor = false;
             this.btnImprimirTicket.Click += new System.EventHandler(this.btnImprimirTicket_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(1046, 28);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 85;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // VentasPropias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnImprimirTicket);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnExportarPDF);
@@ -281,5 +297,6 @@
         private System.Windows.Forms.Button btnExportarPDF;
         private System.Windows.Forms.Button btnVerDetalle;
         private System.Windows.Forms.Button btnImprimirTicket;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

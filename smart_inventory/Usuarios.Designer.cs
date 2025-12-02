@@ -54,6 +54,7 @@
             this.lblTotalUsuarios = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.pic_users = new System.Windows.Forms.PictureBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbDatosUsuario.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             this.gbListaUsuarios.SuspendLayout();
@@ -81,7 +82,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 82);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 3);
+            this.panel1.Size = new System.Drawing.Size(1035, 3);
             this.panel1.TabIndex = 9;
             // 
             // gbDatosUsuario
@@ -103,7 +104,7 @@
             this.gbDatosUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatosUsuario.Location = new System.Drawing.Point(17, 93);
             this.gbDatosUsuario.Name = "gbDatosUsuario";
-            this.gbDatosUsuario.Size = new System.Drawing.Size(732, 255);
+            this.gbDatosUsuario.Size = new System.Drawing.Size(715, 255);
             this.gbDatosUsuario.TabIndex = 27;
             this.gbDatosUsuario.TabStop = false;
             this.gbDatosUsuario.Text = "Datos del Usuario";
@@ -206,7 +207,7 @@
             this.btnNuevoUser.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnNuevoUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevoUser.Location = new System.Drawing.Point(763, 93);
+            this.btnNuevoUser.Location = new System.Drawing.Point(746, 93);
             this.btnNuevoUser.Name = "btnNuevoUser";
             this.btnNuevoUser.Size = new System.Drawing.Size(203, 40);
             this.btnNuevoUser.TabIndex = 28;
@@ -220,7 +221,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.DimGray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLimpiar.Location = new System.Drawing.Point(763, 308);
+            this.btnLimpiar.Location = new System.Drawing.Point(746, 308);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(203, 40);
             this.btnLimpiar.TabIndex = 29;
@@ -234,7 +235,7 @@
             this.btnBorrarUser.BackColor = System.Drawing.Color.Red;
             this.btnBorrarUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBorrarUser.Location = new System.Drawing.Point(763, 237);
+            this.btnBorrarUser.Location = new System.Drawing.Point(746, 237);
             this.btnBorrarUser.Name = "btnBorrarUser";
             this.btnBorrarUser.Size = new System.Drawing.Size(203, 40);
             this.btnBorrarUser.TabIndex = 30;
@@ -248,7 +249,7 @@
             this.btnEditarUser.BackColor = System.Drawing.Color.ForestGreen;
             this.btnEditarUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEditarUser.Location = new System.Drawing.Point(763, 164);
+            this.btnEditarUser.Location = new System.Drawing.Point(746, 164);
             this.btnEditarUser.Name = "btnEditarUser";
             this.btnEditarUser.Size = new System.Drawing.Size(203, 40);
             this.btnEditarUser.TabIndex = 31;
@@ -266,7 +267,7 @@
             this.gbBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbBusqueda.Location = new System.Drawing.Point(17, 363);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(647, 69);
+            this.gbBusqueda.Size = new System.Drawing.Size(630, 69);
             this.gbBusqueda.TabIndex = 32;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Usuario";
@@ -277,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarUsuario.Location = new System.Drawing.Point(62, 28);
             this.txtBuscarUsuario.Name = "txtBuscarUsuario";
-            this.txtBuscarUsuario.Size = new System.Drawing.Size(579, 29);
+            this.txtBuscarUsuario.Size = new System.Drawing.Size(562, 29);
             this.txtBuscarUsuario.TabIndex = 1;
             this.txtBuscarUsuario.TextChanged += new System.EventHandler(this.txtBuscarUsuario_TextChanged);
             // 
@@ -300,7 +301,7 @@
             this.gbListaUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbListaUsuarios.Location = new System.Drawing.Point(17, 451);
             this.gbListaUsuarios.Name = "gbListaUsuarios";
-            this.gbListaUsuarios.Size = new System.Drawing.Size(912, 259);
+            this.gbListaUsuarios.Size = new System.Drawing.Size(895, 259);
             this.gbListaUsuarios.TabIndex = 33;
             this.gbListaUsuarios.TabStop = false;
             this.gbListaUsuarios.Text = "Lista de Usuarios";
@@ -323,7 +324,7 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(6, 36);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(900, 212);
+            this.dgvUsuarios.Size = new System.Drawing.Size(883, 212);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -339,12 +340,27 @@
             this.pic_users.TabIndex = 37;
             this.pic_users.TabStop = false;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegresar.Location = new System.Drawing.Point(929, 27);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(119, 40);
+            this.btnRegresar.TabIndex = 85;
+            this.btnRegresar.Text = "↩ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.pic_users);
             this.Controls.Add(this.gbListaUsuarios);
             this.Controls.Add(this.gbBusqueda);
@@ -401,5 +417,6 @@
         private System.Windows.Forms.Label lblTotalUsuarios;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.PictureBox pic_users;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
